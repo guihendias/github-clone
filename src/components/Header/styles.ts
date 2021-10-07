@@ -9,10 +9,15 @@ export const Container = styled.div`
 `;
 
 export const GithubLogo = styled(FaGithub)`
+  cursor: pointer;
   fill: var(--logo);
   width: 32px;
   height: 32px;
   flex-shrink: 0;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 export const SearchForm = styled.form`

@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 import { Container, GithubLogo, SearchForm } from "./styles";
 
-const Header: React.FC = () => {
+interface Props {
+  toggleTheme: () => void;
+}
+
+const Header: React.FC<Props> = ({ toggleTheme }) => {
   const [search, setSearch] = useState("");
 
   const navigate = useNavigate();
@@ -16,7 +20,7 @@ const Header: React.FC = () => {
 
   return (
     <Container>
-      <GithubLogo />
+      <GithubLogo onClick={toggleTheme} />
       <SearchForm onSubmit={handleSubmit}>
         <input
           placeholder="Enter username or repo..."
